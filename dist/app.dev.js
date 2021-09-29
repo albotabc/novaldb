@@ -24,7 +24,11 @@ MongoConnect();
 
 var index = require('./routes/index');
 
-var users = require('./routes/users'); // error handler 错误处理器
+var users = require('./routes/users');
+
+var movies = require('./routes/movies');
+
+var novels = require('./routes/novels'); // error handler 错误处理器
 
 
 onerror(app); // middlewares
@@ -122,7 +126,9 @@ app.use(function _callee2(ctx, next) {
 }); // routes  启动路由
 
 app.use(index.routes(), index.allowedMethods());
-app.use(users.routes(), users.allowedMethods()); // error-handling
+app.use(users.routes(), users.allowedMethods());
+app.use(movies.routes(), movies.allowedMethods());
+app.use(novels.routes(), novels.allowedMethods()); // error-handling
 
 app.on('error', function (err, ctx) {
   console.error('server error', err, ctx);

@@ -14,6 +14,8 @@ MongoConnect()
 
 const index = require('./routes/index')
 const users = require('./routes/users')
+const movies = require('./routes/movies')
+const novels = require('./routes/novels')
 
 // error handler 错误处理器
 onerror(app)
@@ -75,6 +77,9 @@ app.use(async (ctx, next) => {
 // routes  启动路由
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
+app.use(movies.routes(), movies.allowedMethods())
+app.use(novels.routes(), novels.allowedMethods())
+
 
 // error-handling
 app.on('error', (err, ctx) => {

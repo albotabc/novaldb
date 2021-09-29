@@ -44,6 +44,7 @@ const Latest = mongoose.model('latests', novelSchema, 'latests');
 const RedBooks = mongoose.model('reds', novelSchema, 'reds');
 const SellWell = mongoose.model('sellWells', novelSchema, 'sellWells');
 const AllBooks = mongoose.model('allBooks', novelSchema, 'allBooks');
+
 // 抛出模型对象
 module.exports = {
     User,
